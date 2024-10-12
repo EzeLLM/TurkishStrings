@@ -1,0 +1,17 @@
+TextExtractor:
+  target_types:
+    - '.epub'
+    - '.txt'
+  root_path: 'data'
+  chunk_size: 1000 # size in MB of the save chunks
+  export_path: 'export'
+  export_format: 'parquet'
+  export_file_name: 'data'
+
+RandomizedDatasetExtractor:
+  sample_size: 32 # sample in word count. TODO: tokens 
+  sample_count: 4
+  sampling_start: 0.3 # start sampling from 10% of the text
+  sampling_end: 0.9 # end sampling at 90% of the text
+  sampling_strategy: 'random' # random sampling in given intervals
+  similarity_threshold: 0.2 # similarity threshold for the samples
